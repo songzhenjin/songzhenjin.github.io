@@ -250,11 +250,11 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #6097df 0%, #639ad8 100%);
+    background-image: linear-gradient(to right, #7760dfe0 0%, #7569e2e1 100%);
 }
 
 .text-color {
-    color: #0f9d58 !important;
+    color: #4f3cbd !important;
 }
 
 .white-color {
