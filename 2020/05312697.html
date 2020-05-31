@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="快速搭建Hexo博客的基本流程, (｀Д´) 你凶什么凶">
+    <meta name="keywords" content="Hexo+GitHub如何将主题修改为Matery, (｀Д´) 你凶什么凶">
     <meta name="description" content="绘一纸潇湘，花盏玲珑如妆，雨落弦响，陌上芳华，醉影照天长">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>快速搭建Hexo博客的基本流程 | (｀Д´) 你凶什么凶</title>
+    <title>Hexo+GitHub如何将主题修改为Matery | (｀Д´) 你凶什么凶</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -585,12 +585,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">快速搭建Hexo博客的基本流程</h1>
+                    <h1 class="description center-align post-title">Hexo+GitHub如何将主题修改为Matery</h1>
                 </div>
             </div>
         </div>
@@ -751,91 +751,113 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="快速搭建Hexo博客的基本流程"><a href="#快速搭建Hexo博客的基本流程" class="headerlink" title="快速搭建Hexo博客的基本流程"></a>快速搭建Hexo博客的基本流程</h1><p>对于一些在校学生而言，有一个可以记录自己学习经历的地方是相当有必要的；对于一些毕业生而言，在面试工作的时候有一个属于自己的博客可以让HR高看一眼。 因此，当我搭建好属于自己的博客后，我想把自己的经验记录下来，让更多人拥有属于自己的博客。这里是<a href="https://songzhenjin.github.io/">我的博客</a>的效果。  </p>
-<p>  主要流程如下：  </p>
-<ul>
-<li>Node环境搭建</li>
-<li>Hexo安装</li>
-<li>Git环境搭建</li>
-<li>连接github仓库</li>
-</ul>
+                <h1 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h1><p>当我们搭建好自己的博客以后，选择一个自己的主题，按需进行个性化配置是一个很不错的选择。我使用的主题为<code>hexo-theme-matery</code>主题，个人认为非常简洁好看。这是<a href="https://songzhenjin.github.io/">本人博客</a>。</p>
 <blockquote>
-<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。</p>
+<p>hexo-theme-matery是一个采用<code>Material Design</code>和响应式设计的Hexo博客主题。  </p>
 </blockquote>
-<h2 id="Node-js安装及环境搭建"><a href="#Node-js安装及环境搭建" class="headerlink" title="Node.js安装及环境搭建"></a>Node.js安装及环境搭建</h2><p>  点击<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node下载界面</a>选择对应的机器型号进行安装(Winodws用户直接选择installer进行下载即可)  </p>
-<p>  <img src="https://i.loli.net/2020/05/24/gLukP65f8Cy19vU.png" alt="">  </p>
-<p>  然后一直点下一步直到安装完毕，安装完毕后输入Win+R打开命令框    </p>
-<pre><code>node -v
-# 如果显示版本号就说明Node安装成功
-npm -v              
-# 如果显示版本号就说明npm安装成功
-npm config set registry https://registry.npm.taobao.org
-# 由于服务器原因可以配置一个淘宝镜像来快速的下载和安装一下文件
-npm config get registry
-# 检查镜像是否配置成功 </code></pre><p>淘宝镜像配置成功以后，我们就可以在<code>npm</code>命令前加一个<code>c</code>，也就是<code>cnpm</code>来进行依赖的下载和安装，这样会大大加快下载的速度。 </p>
-<h2 id="Hexo安装及初始化"><a href="#Hexo安装及初始化" class="headerlink" title="Hexo安装及初始化"></a>Hexo安装及初始化</h2><p>在配置好Node环境之后就可以开始安装博客系统了。<br>我们直接在Win+R中开始下载安装Hexo </p>
-<pre><code>npm install hexo-cli -g 
-# 下载安装hexo
-hexo -v 
-# 检查版本号来检验是否安装成功
-hexo init blog 
-# 进入一个空的文件夹来作为你的博客资源目录
-cd blog
-# 进入你的博客资源目录
-npm install
-# 安装hexo需要的依赖</code></pre><p>Hexo项目的目录文件:  </p>
+<h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><p>点击<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">Matery主题官网</a>向下滑下载最新稳定版的代码，解压缩后，将<code>hexo-theme-matery</code>的文件夹复制到你的Hexo根目录的<code>themes</code>文件夹中。(也可以在<code>themes</code>文件夹下使用<code>Git Bush</code>命令输入下方语句来下载)</p>
+<pre><code>git clone https://github.com/blinkfox/hexo-theme-matery.git</code></pre><h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><p>修改Hexo根目录下的<code>_config.yml</code>文件的<code>theme</code>的值为<code>hexo-theme-matery</code>  </p>
+<p><strong><code>_config.yml</code>文件的其它修改建议:</strong></p>
 <ul>
-<li>node_modules：依赖包  </li>
-<li>public：存放生成的页面  </li>
-<li>theme：存放博客主题</li>
-<li>source：文件夹下的_posts用来存放文章</li>
-<li>_config.yml：博客的配置文件  </li>
+<li>修改<code>_config.yml</code>的<code>url</code>的值为你的网站主<code>url</code>（如：<a href="https://xxx.github.io" target="_blank" rel="noopener">https://xxx.github.io</a>)</li>
+<li>建议修改两个<code>per_page</code>的分页条数值为<code>6</code>的倍数，如:12、18等,这样文章列表在各个设备屏幕下都能较好的显示。</li>
+<li>中文用户建议修改<code>language</code>的值为<code>zh-CN</code>。</li>
 </ul>
-<p>最后，我们在Win+R中输入</p>
-<pre><code>hexo clean
-# 删除静态资源文件public
-hexo g
-# 生成静态资源文件public
-hexo s
-# 本地服务器运行</code></pre><p>完成后，启动浏览器访问<code>http://localhost:4000/</code>就能看到你的博客的初试样式了<img src="https://i.loli.net/2020/05/24/T9alEhunDIkmjbQ.png" alt="">  </p>
-<h2 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h2><p>为了让别人也可以访问我们的博客，我们需要将博客部署到远端。</p>
-<blockquote>
-<p>Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的hexo博客文章，上传到GitHub或码云的工具。  </p>
+<h2 id="新建分类categories页及其它"><a href="#新建分类categories页及其它" class="headerlink" title="新建分类categories页及其它"></a>新建分类categories页及其它</h2><p><code>categories</code>页是用来展示所有分类的页面，你需要在你的博客的根目录下的<code>source</code>文件夹里新建<code>categories</code>文件夹，文件夹里继续新建<code>index.md</code>文件，也可以使用在<code>source</code>文件夹里使用命令</p>
+<pre><code>hexo new page &quot;categories&quot;</code></pre><p>建好以后，对新建的页面文件<code>index.md</code>进行编辑，至少需要添加以下内容:</p>
+<pre><code>---
+title: categories
+date: 2018-09-30 17:25:30
+type: &quot;categories&quot;
+layout: &quot;categories&quot;
+---</code></pre><p>同理，我们还需要添加标签页面(<code>tags</code>)、关于我页面(<code>about</code>)、留言板页面(<code>contact</code>)、友情链接页面(<code>friends</code>)。  </p>
+<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><p>由于Hexo自带的代码高亮主题显示不好看，所以主题中使用到了<code>hexo-prism-plugin</code>的Hexo插件来做代码高亮，安装命令如下:  </p>
+<pre><code>npm i -S hexo-prism-plugin</code></pre><p>然后，修改Hexo根目录下<code>_config.yml</code>文件中<code>highlight.enable</code>的值为<code>false</code>,并新增<code>prism</code>插件相关的配置，主要配置如下:  </p>
+<pre><code>highlight:
+  enable: false
+
+prism_plugin:
+  mode: &#39;preprocess&#39;    # realtime/preprocess
+  theme: &#39;tomorrow&#39;
+  line_number: false    # default false
+  custom_css:</code></pre><h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>本主题中还使用到了<code>hexo-generator-search</code>的Hexo插件来做内容搜索，安装命令如下：<br>‘’’<br>npm install hexo-generator-search –save<br>‘’’<br>在Hexo根目录下的<code>_config.yml</code>文件中，新增以下配置项：  </p>
+<pre><code>search:
+  path: search.xml
+  field: post</code></pre><h2 id="配置音乐播放器"><a href="#配置音乐播放器" class="headerlink" title="配置音乐播放器"></a>配置音乐播放器</h2><p>要支持音乐播放，在主题的<code>_config.yml</code>配置文件中激活music配置即可:</p>
+<pre><code># 是否在首页显示音乐
+music:
+  enable: true
+  title:             #非吸底模式有效
+    enable: true
+    show: 听听音乐
+  server: netease   #require music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    #require song, playlist, album, search, artist
+  id: 503838841     #require song id / playlist id / album id / search keyword
+  fixed: false      # 开启吸底模式
+  autoplay: false   # 是否自动播放
+  theme: &#39;#42b983&#39;
+  loop: &#39;all&#39;       # 音频循环播放, 可选值: &#39;all&#39;, &#39;one&#39;, &#39;none&#39;
+  order: &#39;random&#39;   # 音频循环顺序, 可选值: &#39;list&#39;, &#39;random&#39;
+  preload: &#39;auto&#39;   # 预加载，可选值: &#39;none&#39;, &#39;metadata&#39;, &#39;auto&#39;
+  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: true  # 列表默认折叠</code></pre><blockquote>
+<p>server可选netease（网易云音乐），tencent（QQ音乐），kugou（酷狗音乐），xiami&gt; （虾米音乐），baidu（百度音乐）.  </p>
 </blockquote>
-<p>在<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git下载界面</a>安装Git,安装完成后在Win+R中输入下方命令  </p>
-<pre><code>git --version
-# 检查Git是否安装成功</code></pre><p>配置好<strong>Git</strong>环境之后我们就可以开始部署了。我们可以将我们的博客部署到本地服务器、购买的阿里云服务器、github或码云上。这里我选择的是github。  </p>
+<blockquote>
+<p>type可选song（歌曲），playlist（歌单），album（专辑），search（搜索关键字），&gt;artist（歌手）  </p>
+</blockquote>
+<blockquote>
+<p>id获取示例: 浏览器打开网易云音乐，点击我喜欢的音乐歌单，地址栏有一串数字，&gt;playlist的id即为这串数字。</p>
+</blockquote>
+<h2 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h2><p>在主题文件的<code>/source/css/matery.css</code>文件中，搜索<code>.bg-color</code>来修改背景颜色:  </p>
+<pre><code>/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
+.bg-color {
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+}
+
+@-webkit-keyframes rainbow {
+   /* 动态切换背景颜色. 注释后就不会随机切换背景颜色*/
+}
+
+@keyframes rainbow {
+    /* 动态切换背景颜色.注释后就不会随机切换背景颜色 */
+}</code></pre><h2 id="修改banner图和文章特色图"><a href="#修改banner图和文章特色图" class="headerlink" title="修改banner图和文章特色图"></a>修改banner图和文章特色图</h2><p>可以直接在<code>/souce/medias/binner</code>文件夹中更改喜欢的<code>banner</code>图片，主题代码中是每天动态切换一张，只需<code>7</code>张即可。<code>banner</code>切换的代码位置在<code>/layout/_partial/bg-cover-content.ejs</code>文件的<code>&lt;script&gt;&lt;/script&gt;</code>代码中，可以根据自己的喜好进行修改。<br>另外，以下是其它图片的含义，修改时请不要改变名称(否则会报错)  </p>
+<ul>
+<li>favicon.png 网页地址Logo  </li>
+<li>banner 背景图片  </li>
+<li>featureimages 文章特色图  </li>
+<li>reward 打赏图  </li>
+<li>avatar 头像</li>
+</ul>
+<h2 id="Live2d看板娘"><a href="#Live2d看板娘" class="headerlink" title="Live2d看板娘"></a>Live2d看板娘</h2><p>废话不多说，先上<strong>效果图：</strong><br><img src="https://upload-images.jianshu.io/upload_images/16380860-cc98e334604276d6.gif?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt="">    </p>
+<blockquote>
+<p>张书樵大神作品 功能齐全：能说话、能换装、能玩游戏、能拍照、还能自定义。</p>
+</blockquote>
 <ol>
-<li>登录<a href="https://github.com/" target="_blank" rel="noopener">GitHub官网</a>进行注册。</li>
-<li>创建一个新的存储库，仓库名称必须是 xxx.github.io。<br><img src="https://static.oschina.net/uploads/img/201803/16134819_KCMp.png" alt=""></li>
-<li>创建SSH Key，在命令框中输入下方命令：  <pre><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></pre>你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可<blockquote>
-<p>代码参数含义:  </p>
-<ul>
-<li>-t 指定密钥类型，默认是 rsa ，可以省略。  </li>
-<li>-C 设置注释文字，比如邮箱。</li>
-<li>-f 指定密钥文件存储文件名。 </li>
-</ul>
-</blockquote>
-</li>
+<li>本项目需要<code>jQuary</code>和<code>front-awesome</code>支持。因此没有添加依赖的同学，可以在前端页面中的<code>&lt;head&gt;</code>中 加入：  <pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;</code></pre></li>
+<li>下载<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpangao1990%2Fpangao1990.github.io%2Ftree%2Fmaster%2Flive2d" target="_blank" rel="noopener">大神项目</a>，解压到Hexo根目录下的<code>themes/next/source</code>文件夹中，修改文件名称为<code>live2d-widget</code>，修改项目中的<code>autoload.js</code>文件，将  <pre><code>const live2d_path = &quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/&quot;;   </code></pre>改为<pre><code>const live2d_path = &quot;/live2d-widget/&quot;;</code></pre></li>
+<li>在<code>/themes/next/layout/_layout.swig</code>中，新增以下内容:  <pre><code>&lt;script src=&quot;/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;</code></pre></li>
+<li>在主题配置文件<code>_config.yml</code>中，新增如下内容:  <pre><code>live2d:
+enable: true</code></pre></li>
+<li>想修改看板娘大小、位置、格式、文本内容等，可查看并修改 <code>waifu-tips.js</code>、<code>waifu-tips.json</code>和<code>waifu.css</code>。</li>
+<li>部署到仓库以后，你就可以到你的博客里去和看板娘玩耍啦。  </li>
 </ol>
-<p>然后就会在C/Users/you/.ssh下生成<code>id_rsa</code>(私钥)和<code>id_rsa.pub</code>(公钥)两个秘匙文件。<br>4. 登录GitHub，右上角点击头像选择<strong>settings</strong>，然后选择<strong>SSH Keys</strong><br>点<code>Add SSH Key</code>,填上任意Title，在Key文本框里粘贴<code>id_rsa.pub</code>文件的内容，这样我们就能看到已经添加的Key。<br>5. 测试是否连接成功<br>在命令框中输入  </p>
-<pre><code>ssh -T git@github.com</code></pre><p>当你输入以上命令后，会有一段警告代码，如：</p>
-<pre><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
-# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-# Are you sure you want to continue connecting (yes/no)?</code></pre><p>这是正常的，输入yes回车即可.<br>当出现下面这段话，证明你已经成功将你的Hexo博客和GitHub仓库连接起来了！<br><img src="https://img-blog.csdnimg.cn/20191205003219187.png" alt="">  </p>
-<p>如果没有成功，那么删除秘钥和.SSH文件，再来一遍即可。</p>
-<blockquote>
-<p>这部分我参考了<a href="https://blog.csdn.net/LawssssCat/article/details/103396095" target="_blank" rel="noopener">廖雪峰的Git学习笔记</a>，教程很详细</p>
+<h2 id="添加樱花飘落效果"><a href="#添加樱花飘落效果" class="headerlink" title="添加樱花飘落效果"></a>添加樱花飘落效果</h2><p>在<code>themes/matery/source/js</code>目录下新建<code>sakura.js</code>文件，打开<a href="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.7/source/js/sakura.js" target="_blank" rel="noopener">这个网址</a>，将内容复制粘贴到sakura.js即可。</p>
+<p>然后再<code>themes/matery/layout/layout.ejs</code>文件内添加下面的内容：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth &gt; 768) {
+    document.write(&#39;&lt;script type=&quot;text/javascript&quot; src=&quot;/js/sakura.js&quot;&gt;&lt;\/script&gt;&#39;);
+}
+&lt;/script&gt;</code></pre><h2 id="链接地址"><a href="#链接地址" class="headerlink" title="链接地址"></a>链接地址</h2><p>链接地址可以在主题配置文件里进行修改。</p>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><blockquote>
+<p>更多的个性化修改请查看<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">闪烁之狐大佬的GitHub</a>和<a href="https://yafine-blog.cn/" target="_blank" rel="noopener">励心大佬的博客</a>，他们的教程很详细。 </p>
 </blockquote>
-<h3 id="个人博客搭建完成"><a href="#个人博客搭建完成" class="headerlink" title="个人博客搭建完成"></a>个人博客搭建完成</h3><p>个人博客已经初步搭建完成，然后你可以在博客根目录输入下方命令  </p>
-<pre><code>hexo clean
-# 清除静态资源文件夹
-hexo g
-# 生成静态资源文件夹
-hexo s
-# 在网址上输入localhost:4000, 查看本地更新情况
-hexo d
-# 部署到GitHub仓库</code></pre><p>当<code>hexo d</code>成功后，你可以在网址上输入<code>https://xxx.github.io/</code>来访问你的博客主页。</p>
+<blockquote>
+<p>大家还可以去<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes|Hexo</a>找更喜欢的主题，我个人比较推荐Next主题和Butterfly主题(<a href="https://docs.jerryc.me/#/" target="_blank" rel="noopener">Butterfly教程</a>)。</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -861,7 +883,7 @@ hexo d
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://songzhenjin.github.io/2020/053163806.html">http://songzhenjin.github.io/2020/053163806.html</a>
+                    <a href="http://songzhenjin.github.io/2020/05312697.html">http://songzhenjin.github.io/2020/05312697.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1072,9 +1094,10 @@ hexo d
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05312697.html">
                     <div class="card-image">
@@ -1094,9 +1117,9 @@ hexo-theme-matery是一个采用Mate
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1105,6 +1128,7 @@ hexo-theme-matery是一个采用Mate
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1127,24 +1151,24 @@ hexo-theme-matery是一个采用Mate
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/052516107.html">
+                <a href="/2020/053163806.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="快速搭建Hexo博客的基本流程">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">快速搭建Hexo博客的基本流程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            快速搭建Hexo博客的基本流程对于一些在校学生而言，有一个可以记录自己学习经历的地方是相当有必要的；对于一些毕业生而言，在面试工作的时候有一个属于自己的博客可以让HR高看一眼。 因此，当我搭建好属于自己的博客后，我想把自己的经验记录下来，让
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
                             </span>
                         <span class="publish-author">
                             
@@ -1159,6 +1183,10 @@ hexo-theme-matery是一个采用Mate
                     
                     <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
                         <span class="chip bg-color">博客搭建</span>
+                    </a>
+                    
+                    <a href="/tags/HEXO/">
+                        <span class="chip bg-color">HEXO</span>
                     </a>
                     
                 </div>
