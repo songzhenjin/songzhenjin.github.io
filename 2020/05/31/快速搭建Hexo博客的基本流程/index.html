@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="(｀Д´) 你凶什么凶">
+    <meta name="keywords" content="快速搭建Hexo博客的基本流程, (｀Д´) 你凶什么凶">
     <meta name="description" content="绘一纸潇湘，花盏玲珑如妆，雨落弦响，陌上芳华，醉影照天长">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>(｀Д´) 你凶什么凶</title>
+    <title>快速搭建Hexo博客的基本流程 | (｀Д´) 你凶什么凶</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -582,334 +582,700 @@
 </header>
 
     
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">快速搭建Hexo博客的基本流程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                                <span class="chip bg-color">博客搭建</span>
+                            </a>
+                        
+                            <a href="/tags/HEXO/">
+                                <span class="chip bg-color">HEXO</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-31
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="快速搭建Hexo博客的基本流程"><a href="#快速搭建Hexo博客的基本流程" class="headerlink" title="快速搭建Hexo博客的基本流程"></a>快速搭建Hexo博客的基本流程</h1><p>对于一些在校学生而言，有一个可以记录自己学习经历的地方是相当有必要的；对于一些毕业生而言，在面试工作的时候有一个属于自己的博客可以让HR高看一眼。 因此，当我搭建好属于自己的博客后，我想把自己的经验记录下来，让更多人拥有属于自己的博客。这里是<a href="https://songzhenjin.github.io/">我的博客</a>的效果。  </p>
+<p>  主要流程如下：  </p>
+<ul>
+<li>Node环境搭建</li>
+<li>Hexo安装</li>
+<li>Git环境搭建</li>
+<li>连接github仓库</li>
+</ul>
+<blockquote>
+<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。</p>
+</blockquote>
+<h2 id="Node-js安装及环境搭建"><a href="#Node-js安装及环境搭建" class="headerlink" title="Node.js安装及环境搭建"></a>Node.js安装及环境搭建</h2><p>  点击<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node下载界面</a>选择对应的机器型号进行安装(Winodws用户直接选择installer进行下载即可)  </p>
+<p>  <img src="https://i.loli.net/2020/05/24/gLukP65f8Cy19vU.png" alt="">  </p>
+<p>  然后一直点下一步直到安装完毕，安装完毕后输入Win+R打开命令框    </p>
+<pre><code>node -v
+# 如果显示版本号就说明Node安装成功
+npm -v              
+# 如果显示版本号就说明npm安装成功
+npm config set registry https://registry.npm.taobao.org
+# 由于服务器原因可以配置一个淘宝镜像来快速的下载和安装一下文件
+npm config get registry
+# 检查镜像是否配置成功 </code></pre><h2 id="Hexo安装及初始化"><a href="#Hexo安装及初始化" class="headerlink" title="Hexo安装及初始化"></a>Hexo安装及初始化</h2><p>在配置好Node环境之后就可以开始安装博客系统了。<br>我们直接在Win+R中开始下载安装Hexo </p>
+<pre><code>npm install hexo-cli -g 
+# 下载安装hexo
+hexo -v 
+# 检查版本号来检验是否安装成功
+hexo init blog 
+# 进入一个空的文件夹来作为你的博客资源目录
+cd blog
+# 进入你的博客资源目录
+npm install
+# 安装hexo需要的依赖</code></pre><p>Hexo项目的目录文件:  </p>
+<ul>
+<li>node_modules：依赖包  </li>
+<li>public：存放生成的页面  </li>
+<li>theme：存放博客主题</li>
+<li>source：文件夹下的_posts用来存放文章</li>
+<li>_config.yml：博客的配置文件  </li>
+</ul>
+<p>最后，我们在Win+R中输入</p>
+<pre><code>hexo clean
+# 删除静态资源文件public
+hexo g
+# 生成静态资源文件public
+hexo s
+# 本地服务器运行</code></pre><p>完成后，启动浏览器访问<code>http://localhost:4000/</code>就能看到你的博客的初试样式了<img src="https://i.loli.net/2020/05/24/T9alEhunDIkmjbQ.png" alt="">  </p>
+<h2 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h2><p>为了让别人也可以访问我们的博客，我们需要将博客部署到远端。</p>
+<blockquote>
+<p>Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的hexo博客文章，上传到GitHub或码云的工具。  </p>
+</blockquote>
+<p>在<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git下载界面</a>安装Git,安装完成后在Win+R中输入下方命令  </p>
+<pre><code>git --version
+# 检查Git是否安装成功</code></pre><p>配置好<strong>Git</strong>环境之后我们就可以开始部署了。我们可以将我们的博客部署到本地服务器、购买的阿里云服务器、github或码云上。这里我选择的是github。  </p>
+<ol>
+<li>登录<a href="https://github.com/" target="_blank" rel="noopener">GitHub官网</a>进行注册。</li>
+<li>创建一个新的存储库，仓库名称必须是 xxx.github.io。<br><img src="https://static.oschina.net/uploads/img/201803/16134819_KCMp.png" alt=""></li>
+<li>创建SSH Key，在命令框中输入下方命令：  <pre><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></pre>你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可<blockquote>
+<p>代码参数含义:  </p>
+<ul>
+<li>-t 指定密钥类型，默认是 rsa ，可以省略。  </li>
+<li>-C 设置注释文字，比如邮箱。</li>
+<li>-f 指定密钥文件存储文件名。 </li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p>然后就会在C/Users/you/.ssh下生成<code>id_rsa</code>(私钥)和<code>id_rsa.pub</code>(公钥)两个秘匙文件。<br>4. 登录GitHub，右上角点击头像选择<strong>settings</strong>，然后选择<strong>SSH Keys</strong><br>点<code>Add SSH Key</code>,填上任意Title，在Key文本框里粘贴<code>id_rsa.pub</code>文件的内容，这样我们就能看到已经添加的Key。<br>5. 测试是否连接成功<br>在命令框中输入  </p>
+<pre><code>ssh -T git@github.com</code></pre><p>当你输入以上命令后，会有一段警告代码，如：</p>
+<pre><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
+# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+# Are you sure you want to continue connecting (yes/no)?</code></pre><p>这是正常的，输入yes回车即可.<br>当出现下面这段话，证明你成功了！<br><img src="https://img-blog.csdnimg.cn/20191205003219187.png" alt="">  </p>
+<p>如果没有成功，那么删除秘钥和.SSH文件，再来一遍即可。</p>
+<blockquote>
+<p>这部分我参考了<a href="https://blog.csdn.net/LawssssCat/article/details/103396095" target="_blank" rel="noopener">廖雪峰的Git学习笔记</a>，教程很详细</p>
+</blockquote>
+<h3 id="个人博客搭建完成"><a href="#个人博客搭建完成" class="headerlink" title="个人博客搭建完成"></a>个人博客搭建完成</h3><p>个人博客已经初步搭建完成，搭建完成后我们就可以用Markdown语言进行写博客了</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://songzhenjin.github.io" rel="external nofollow noreferrer">遇忆</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://songzhenjin.github.io/2020/05/31/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/">http://songzhenjin.github.io/2020/05/31/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://songzhenjin.github.io" target="_blank">遇忆</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                                    <span class="chip bg-color">博客搭建</span>
+                                </a>
+                            
+                                <a href="/tags/HEXO/">
+                                    <span class="chip bg-color">HEXO</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
         cursor: pointer;
-        z-index: 100;
     }
 
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
     }
 
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
     }
 
-    #prev-cover i {
-        margin-right: 3px;
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
     }
 
-    #next-cover i {
-        margin-left: 3px;
+    .reward-content ul {
+        padding-left: 0 !important;
     }
 
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
     }
 
-    .carousel-control i {
+    .reward-tabs .tab a {
         color: #fff;
-        font-size: 2.4rem;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
     }
 </style>
 
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
 
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                遇忆RiKa0
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['骨子里文艺的人，一半柴米油盐酱醋茶，一半琴棋书画诗酒花，满头落雪走半生，抬眼之处，仍是少年出示之年华','Never really desperate, only the lost of the soul'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/songzhenjin" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/songzhenjin" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=915597930915597930" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 915597930" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-    <a href="https://weibo.com/u/7036468677/home?wvr=5&amp;lf=reg" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/7036468677/home?wvr=5&amp;lf=reg" data-position="top" data-delay="50">
-        <i class="fab fa-weibo"></i>
-    </a>
-
-
-
-    <a href="https://www.zhihu.com/people/yan-you-64-16" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/yan-you-64-16" data-position="top" data-delay="50">
-        <i class="fab fa-zhihu1">知</i>
-    </a>
-
-
-
-</div>
-        </div>
-    </div>
-
-    
 </div>
 
 <script>
     $(function () {
-        let coverSlider = $('.carousel');
+        $('.tabs').tabs();
+    });
+</script>
 
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
             
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
+        </div>
+    </div>
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
         
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/05/31/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="快速搭建Hexo博客的基本流程">
+                        
+                        <span class="card-title">快速搭建Hexo博客的基本流程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            快速搭建Hexo博客的基本流程对于一些在校学生而言，有一个可以记录自己学习经历的地方是相当有必要的；对于一些毕业生而言，在面试工作的时候有一个属于自己的博客可以让HR高看一眼。 因此，当我搭建好属于自己的博客后，我想把自己的经验记录下来，让
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            遇忆
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="chip bg-color">博客搭建</span>
+                    </a>
+                    
+                    <a href="/tags/HEXO/">
+                        <span class="chip bg-color">HEXO</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/25/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            遇忆
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
     });
 </script>
 
-
-
-<main class="content">
-
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;山河永寂
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            千秋功名，一世葬你，玲珑社稷，可笑却无君王命。终于为那一身江南烟雨覆了天下，容华谢后，不过一场，山河永寂。
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/31/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="快速搭建Hexo博客的基本流程">
-                            
-                            <span class="card-title">快速搭建Hexo博客的基本流程</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                快速搭建Hexo博客的基本流程对于一些在校学生而言，有一个可以记录自己学习经历的地方是相当有必要的；对于一些毕业生而言，在面试工作的时候有一个属于自己的博客可以让HR高看一眼。 因此，当我搭建好属于自己的博客后，我想把自己的经验记录下来，让
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                遇忆
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                            <span class="chip bg-color">博客搭建</span>
-                        </a>
-                        
-                        <a href="/tags/HEXO/">
-                            <span class="chip bg-color">HEXO</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/25/hello-world/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                            
-                            <span class="card-title">Hello World</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                遇忆
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
 
 </main>
 
